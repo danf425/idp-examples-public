@@ -1,0 +1,45 @@
+kind: Component
+spec:
+  type: Service
+  lifecycle: prod
+  owner: Field_Engineering
+  system: Platform_Demo
+  dependsOn:
+    - component:boutique-adservice
+    - component:boutique-checkoutservice
+    - component:boutique-currencyservice
+    - component:boutique-emailservice
+    - component:boutique-loadgenerator
+    - component:boutique-paymentservice
+    - component:boutique-productcatalogservice
+  providesApis:
+    - petstore
+    - starwars-graphql
+apiVersion: backstage.io/v1alpha1
+metadata:
+  name: boutique-frontend
+  description: Frontend for the boutique online store
+  links:
+    - url: http://34.67.7.165/
+      title: Prod Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.28.46.65
+      title: QA Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.135.60.81/
+      title: Dev Website
+      icon: dashboard
+      type: Boutique FrontEnd
+  tags: 
+    - go
+  annotations:
+#    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
+    harness.io/cd-serviceId: Boutique_Frontend
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: wings-software/e2e-enterprise-demo
+    backstage.io/kubernetes-label-selector: 'backstage.io/kubernetes-id=boutique-frontend'
+    backstage.io/kubernetes-id: boutique-frontend
+    pagerduty.com/service-id: PGXMVMC
+

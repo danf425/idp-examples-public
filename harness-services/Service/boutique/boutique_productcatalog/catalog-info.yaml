@@ -1,0 +1,30 @@
+kind: Component
+spec:
+  type: Service
+  lifecycle: prod
+  owner: Harness_Product_Engineering
+  system: Platform_Demo
+  subcomponentOf: boutique-frontend
+apiVersion: backstage.io/v1alpha1
+metadata:
+  name: boutique-productcatalogservice
+  description: Product Catalog Service for the boutique online store
+  links:
+    - url: http://34.67.7.165/
+      title: Prod Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.28.46.65
+      title: QA Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.135.60.81/
+      title: Dev Website
+      icon: dashboard
+      type: Boutique FrontEnd
+  tags: 
+    - go
+  annotations:
+ #   harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
+    harness.io/cd-serviceId: Boutique_Product_Catalog_Service
+

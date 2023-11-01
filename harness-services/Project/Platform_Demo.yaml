@@ -1,0 +1,31 @@
+kind: System
+spec:
+  owner: Unknown
+  domain: default
+apiVersion: backstage.io/v1alpha1
+metadata:
+  name: Platform_Demo
+  links:
+    - url: somelink
+      title:  Harness Platform Demo Project
+      icon: dashboard
+      type: Harness Platform Demo Project
+    - url: somelink
+      title: Harness Plaforrm Story
+      icon: dashboard
+      type: Harness Plaforrm Story
+    - url: http://34.67.7.165/
+      title: Prod Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.28.46.65
+      title: QA Website
+      icon: dashboard
+      type: Boutique FrontEnd
+    - url: http://34.135.60.81/
+      title: Dev Website
+      icon: dashboard
+      type: Boutique FrontEnd
+  description: "Documentation: somedoclink"
+  tags: []
+
