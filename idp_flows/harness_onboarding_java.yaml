@@ -1,0 +1,79 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: harness_onboarding
+  title: Create Java App and Onboard it to Harness 
+  description: Creates new GH Repo and Harness project, registers app as a service and creates pipeline(s)
+  tags:
+    - java
+spec:
+  owner: dan.flores@harness.io
+  type: service
+  parameters:
+    - title: Project and Repo Details
+      required:
+        - projectName
+        - github_repo
+      properties:
+        projectName:
+          title: Provide a Unique Project/Team Name
+          type: string
+          description: uniqueTeamName
+        github_repo:
+          title: Provide a Unique Repo/App Name?
+          type: string
+          description: someRepoName
+        isPublish:
+          title: Will this be pushed to the internal production-level artifact registry? (Unchecked only gets pushed to sandbox artifact repository)
+          type: boolean
+    - title: Service and Infrastructure Details
+      required:
+        - owner
+      properties:
+        cloud_provider:
+          title: Choose a cloud provider for Deployment
+          type: string
+          enum: ["GCP", "AWS", "Azure", "OCI"]
+          default: AWS
+        tech_stack:
+          title: Choose the Underlying Infra for the App
+          type: string
+          enum: ["K8s", "VMS", "ECS", "Lambda"]
+          default: K8s
+        db:
+          title: Choose a Database Type for the Service
+          type: string
+          enum: ["None", "MySQL", "Postgres", "MongoDB"]
+          default: MongoDB
+        cache:
+          title: Choose a Caching System for the Service
+          type: string
+          enum: ["None", "Redis"]
+          default: None
+        owner:
+          title: Choose an Owner for the Service
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+        # This field is hidden but needed to authenticate the request to trigger the pipeline
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Creating Repos and Onboarding your Application
+      action: trigger:harness-custom-pipeline
+      input:
+        url: "somepipeline"
+        inputset:
+          projectName: ${{ parameters.projectName }}
+        apikey: ${{ parameters.token }}
+
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
