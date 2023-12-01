@@ -27,7 +27,7 @@ metadata:
       type: Boutique FrontEnd
   tags: 
     - java
-#  annotations:
-    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
-#    harness.io/cd-serviceId: Boutique_Checkout_Service
+  annotations:
+#    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
+    harness.io/cd-serviceId: Boutique_Checkout_Service
 

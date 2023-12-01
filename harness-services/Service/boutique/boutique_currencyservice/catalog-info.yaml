@@ -25,6 +25,6 @@ metadata:
   tags: 
     - nodejs
   annotations:
-    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
-#    harness.io/cd-serviceId: Boutique_Currency_Service
+#    harness.io/project-url: https://app.harness.io/ng/account/6_vVHzo9Qeu9fXvj-AcbCQ/home/orgs/default/projects/Platform_Demo/details
+    harness.io/cd-serviceId: Boutique_Currency_Service
 
