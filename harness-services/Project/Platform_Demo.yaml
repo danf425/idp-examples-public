@@ -6,14 +6,10 @@ apiVersion: backstage.io/v1alpha1
 metadata:
   name: Platform_Demo
   links:
-    - url: somelink
-      title:  Harness Platform Demo Project
+    - url: https://app.harness.io/ng/account/Ivyf0bfkQPKbGaT5K60dHQ/home/orgs/default/projects/default_project/details
+      title:  Harness Platform Demo (Default) Project
       icon: dashboard
       type: Harness Platform Demo Project
-    - url: somelink
-      title: Harness Plaforrm Story
-      icon: dashboard
-      type: Harness Plaforrm Story
     - url: http://34.67.7.165/
       title: Prod Website
       icon: dashboard
